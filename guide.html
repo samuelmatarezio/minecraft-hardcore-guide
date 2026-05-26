@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Minecraft Hardcore Duo Guide — Samuel + Caleb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0F1117;--bg-card:#1A1D2E;--bg-elev:#252840;
+  --text:#E8EAF0;--text2:#8B90A8;--text3:#5A5F7A;
+  --green:#4ADE80;--green-d:rgba(74,222,128,.12);
+  --blue:#60A5FA;--blue-d:rgba(96,165,250,.12);
+  --gold:#F59E0B;--gold-d:rgba(245,158,11,.12);
+  --orange:#F97316;--purple:#A78BFA;--red:#EF4444;
+  --border:rgba(255,255,255,.07);
+  --ff:'Space Grotesk',system-ui,sans-serif;
+  --fb:'Inter',system-ui,sans-serif;
+  --fm:'JetBrains Mono',monospace;
+}
+@page{size:A4;margin:0}
+html{background:var(--bg)}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:13px;line-height:1.6;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+/* PAGE */
+.page{width:210mm;min-height:297mm;padding:18mm 17mm 24mm;page-break-after:always;position:relative;background:var(--bg)}
+.page-cover{padding:0;display:flex;flex-direction:column;justify-content:center;align-items:center;overflow:hidden}
+/* COVER */
+.cover-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 15% 25%,rgba(74,222,128,.09) 0%,transparent 55%),
+  radial-gradient(ellipse at 85% 75%,rgba(96,165,250,.07) 0%,transparent 55%),
+  repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px),
+  repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.018) 39px,rgba(255,255,255,.018) 40px)}
+.cover-inner{position:relative;z-index:1;text-align:center;padding:38mm 22mm 28mm}
+.cover-eyebrow{font-family:var(--fm);font-size:11px;letter-spacing:.3em;color:var(--green);text-transform:uppercase;margin-bottom:22px}
+.cover-title{font-family:var(--ff);font-size:72px;font-weight:700;color:var(--green);line-height:1;letter-spacing:-2px;margin-bottom:14px}
+.cover-sub{font-family:var(--ff);font-size:30px;font-weight:500;color:var(--text);margin-bottom:6px}
+.cover-desc{font-size:14px;color:var(--text2);margin-bottom:52px}
+.cover-line{width:70px;height:2px;background:linear-gradient(90deg,transparent,var(--green),transparent);margin:0 auto 48px}
+.cover-stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.stat-card{background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--green);padding:18px 22px;text-align:center;min-width:96px}
+.stat-n{font-family:var(--ff);font-size:38px;font-weight:700;color:var(--green);line-height:1;display:block}
+.stat-l{font-family:var(--fm);font-size:10px;letter-spacing:.15em;color:var(--text2);text-transform:uppercase;margin-top:5px;display:block}
+.cover-foot{position:absolute;bottom:18mm;left:0;right:0;text-align:center;font-family:var(--fm);font-size:10px;color:var(--text3);letter-spacing:.08em}
+/* PAGE HEADER */
+.ph{display:flex;align-items:center;gap:10px;margin-bottom:22px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.badge{font-family:var(--fm);font-size:10px;letter-spacing:.15em;color:var(--bg);background:var(--green);padding:4px 10px;text-transform:uppercase;font-weight:700;white-space:nowrap}
+.badge.b{background:var(--blue)}.badge.g{background:var(--gold)}.badge.o{background:var(--orange)}.badge.p{background:var(--purple)}
+.ph-title{font-family:var(--ff);font-size:21px;font-weight:700;color:var(--text)}
+/* SECTION TITLE */
+.st{font-family:var(--ff);font-size:15px;font-weight:700;color:var(--green);margin:22px 0 12px;padding-left:11px;border-left:3px solid var(--green)}
+.st.b{color:var(--blue);border-color:var(--blue)}.st.g{color:var(--gold);border-color:var(--gold)}.st.p{color:var(--purple);border-color:var(--purple)}.st.o{color:var(--orange);border-color:var(--orange)}
+/* TABLES */
+table{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:12px}
+thead tr{background:var(--bg-elev)}
+thead th{font-family:var(--ff);font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--green);padding:9px 11px;text-align:left;border-bottom:2px solid var(--green)}
+tbody tr:nth-child(even){background:var(--bg-card)}
+tbody tr:nth-child(odd){background:var(--bg)}
+tbody tr.hl{background:rgba(74,222,128,.07);border-left:3px solid var(--green)}
+tbody td{padding:8px 11px;color:var(--text);border-bottom:1px solid var(--border);vertical-align:top}
+td.mono{font-family:var(--fm);font-size:11px;color:var(--blue)}
+/* CARDS */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:18px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:18px}
+.card{background:var(--bg-card);border:1px solid var(--border);border-top:3px solid var(--green);padding:14px;break-inside:avoid}
+.card.b{border-top-color:var(--blue)}.card.g{border-top-color:var(--gold)}.card.o{border-top-color:var(--orange)}.card.p{border-top-color:var(--purple)}.card.r{border-top-color:var(--red)}
+.ch{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;margin-bottom:6px}
+.ct{font-family:var(--ff);font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
+.vb{font-family:var(--fm);font-size:10px;background:var(--bg-elev);color:var(--blue);padding:3px 7px;white-space:nowrap;flex-shrink:0;border:1px solid rgba(96,165,250,.3)}
+.cm{font-family:var(--fm);font-size:10px;color:var(--text3);margin-bottom:9px;letter-spacing:.04em}
+.cd{font-size:12px;color:var(--text2);line-height:1.5;margin-bottom:10px}
+.chl{background:rgba(74,222,128,.07);border-left:2px solid var(--green);padding:5px 9px;font-size:11px;color:var(--green);margin-bottom:10px;font-style:italic}
+.cf{display:flex;justify-content:space-between;align-items:center;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.dl{font-family:var(--fm);font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.d-e{color:var(--green)}.d-m{color:var(--gold)}.d-h{color:var(--orange)}.d-x{color:var(--red)}.d-mo{color:var(--purple)}
+.ft{font-family:var(--fm);font-size:10px;background:var(--bg-elev);color:var(--text2);padding:3px 8px}
+/* MAP CARDS */
+.mcard{background:var(--bg-card);border:1px solid var(--border);border-left:3px solid var(--blue);padding:13px;break-inside:avoid}
+.mcard.gn{border-left-color:var(--green)}.mcard.g{border-left-color:var(--gold)}.mcard.o{border-left-color:var(--orange)}.mcard.r{border-left-color:var(--red)}
+.mt{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--text);margin-bottom:4px}
+.mtype{font-family:var(--fm);font-size:10px;color:var(--blue);margin-bottom:7px}
+.md{font-size:11.5px;color:var(--text2);line-height:1.5;margin-bottom:6px}
+.mc{font-size:11px;color:var(--gold);font-style:italic}
+/* SEED */
+.seed{background:var(--bg-elev);border:1px solid rgba(96,165,250,.3);padding:7px 11px;font-family:var(--fm);font-size:12px;color:var(--blue);margin:7px 0;letter-spacing:.04em}
+/* CALLOUT */
+.callout{background:var(--green-d);border:1px solid rgba(74,222,128,.22);border-left:4px solid var(--green);padding:13px 15px;margin:18px 0;break-inside:avoid}
+.callout.b{background:var(--blue-d);border-color:rgba(96,165,250,.22);border-left-color:var(--blue)}
+.callout.g{background:var(--gold-d);border-color:rgba(245,158,11,.22);border-left-color:var(--gold)}
+.callout-t{font-family:var(--ff);font-size:11px;font-weight:700;color:var(--green);letter-spacing:.07em;text-transform:uppercase;margin-bottom:5px}
+.callout.b .callout-t{color:var(--blue)}.callout.g .callout-t{color:var(--gold)}
+.callout-d{font-size:12px;color:var(--text2);line-height:1.5}
+/* INTRO TEXT */
+.intro{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:18px;padding:13px 15px;background:var(--bg-card);border-left:3px solid var(--green)}
+/* TIMELINE */
+.tl{position:relative;padding-left:80px}
+.tl::before{content:'';position:absolute;left:68px;top:0;bottom:0;width:2px;background:var(--border)}
+.tli{position:relative;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.tl-yr{position:absolute;left:-80px;top:11px;font-family:var(--fm);font-size:11px;color:var(--green);text-align:right;width:60px}
+.tl-dot{position:absolute;left:-16px;top:13px;width:10px;height:10px;border-radius:50%;background:var(--bg-elev);border:2px solid var(--green);z-index:1}
+.tl-dot.feat{background:var(--green);width:14px;height:14px;left:-18px;top:11px}
+.tl-ver{font-family:var(--ff);font-size:13px;font-weight:700;color:var(--text)}
+.tl-ver.feat{color:var(--green);font-size:15px}
+.tl-desc{font-size:11.5px;color:var(--text2);margin-top:2px;line-height:1.4}
+.tl-tag{display:inline-block;font-family:var(--fm);font-size:9px;padding:2px 6px;background:var(--bg-elev);color:var(--text3);margin-top:4px;letter-spacing:.04em}
+/* RECOMMENDATION GRID */
+.rg{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin:18px 0}
+.rb{background:var(--bg-card);border:1px solid var(--border);padding:18px;break-inside:avoid}
+.rb.feat{border-color:var(--green);background:rgba(74,222,128,.05)}
+.rl{font-family:var(--fm);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:7px;display:block}
+.rtit{font-family:var(--ff);font-size:14px;font-weight:700;color:var(--text);margin-bottom:9px;line-height:1.3}
+.ri{list-style:none;padding:0}
+.ri li{font-size:12px;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);display:flex;align-items:baseline;gap:7px}
+.ri li::before{content:'—';color:var(--green);flex-shrink:0;font-family:var(--fm);font-size:11px}
+/* TOC */
+.toc-item{display:flex;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--border);gap:12px}
+.toc-p{font-family:var(--fm);font-size:10px;color:var(--green);letter-spacing:.1em;flex-shrink:0;width:64px}
+.toc-n{font-family:var(--ff);font-size:13px;font-weight:600;color:var(--text);flex:1}
+.toc-c{font-family:var(--fm);font-size:10px;color:var(--text3);flex-shrink:0}
+/* LAYER TITLE */
+.lt{font-family:var(--ff);font-size:12px;font-weight:700;color:var(--bg);background:var(--blue);padding:5px 13px;display:inline-block;margin-bottom:0}
+.lt.gn{background:var(--green)}.lt.g{background:var(--gold)}
+/* LISTS */
+ul.slist{list-style:none;padding:0}
+ul.slist li{padding:5px 0 5px 14px;border-bottom:1px solid var(--border);font-size:12px;color:var(--text2);position:relative}
+ul.slist li::before{content:'▸';position:absolute;left:0;color:var(--green);font-size:10px}
+/* TWO COL */
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+/* PAGE FOOTER */
+.pf{position:absolute;bottom:8mm;left:17mm;right:17mm;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:5px}
+.pf-t{font-family:var(--fm);font-size:9px;color:var(--text3);letter-spacing:.08em;text-transform:uppercase}
+.pf-n{font-family:var(--fm);font-size:9px;color:var(--text3)}
+/* UTILS */
+strong{color:var(--text)}.tg{color:var(--green)}.tb{color:var(--blue)}.to{color:var(--gold)}.tm{color:var(--text2)}.fmono{font-family:var(--fm)}
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<div class="page page-cover">
+  <div class="cover-bg"></div>
+  <div class="cover-inner">
+    <div class="cover-eyebrow">guia completo · hardcore multiplayer · 2026</div>
+    <div class="cover-title">MINECRAFT</div>
+    <div class="cover-sub">Hardcore Duo Guide</div>
+    <div class="cover-desc">Samuel + Caleb &nbsp;·&nbsp; Versões · Modpacks · Mapas · Desafios</div>
+    <div class="cover-line"></div>
+    <div class="cover-stats">
+      <div class="stat-card"><span class="stat-n">12</span><span class="stat-l">Versões</span></div>
+      <div class="stat-card"><span class="stat-n">15</span><span class="stat-l">Modpacks</span></div>
+      <div class="stat-card"><span class="stat-n">13</span><span class="stat-l">Mapas</span></div>
+      <div class="stat-card"><span class="stat-n">38</span><span class="stat-l">Combos</span></div>
+    </div>
+  </div>
+  <div class="cover-foot">pesquisa realizada em 2026-05-26 &nbsp;·&nbsp; CurseForge · Reddit · Planet Minecraft</div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="page">
+  <div class="ph"><div class="badge">Índice</div><div class="ph-title">Conteúdo do Guia</div></div>
+  <div class="toc-item"><span class="toc-p">PARTE 1</span><span class="toc-n">Versões Marcantes — Linha do Tempo</span><span class="toc-c">12 versões</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 2</span><span class="toc-n">Modpacks — 5 Categorias</span><span class="toc-c">15 modpacks</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 3</span><span class="toc-n">Mapas e Seeds — 6 Categorias</span><span class="toc-c">13 mapas</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 4</span><span class="toc-n">Combinações Prontas — Top 10</span><span class="toc-c">10 combos</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 5</span><span class="toc-n">Desafios, Regras e Variantes Criativas</span><span class="toc-c">20 variantes</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 6</span><span class="toc-n">Recomendação Final — 4 Perfis de Jogo</span><span class="toc-c">4 perfis</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 7</span><span class="toc-n">Living Villages — Setup Completo</span><span class="toc-c">mods + packs + combos</span></div>
+  <div class="callout" style="margin-top:28px">
+    <div class="callout-t">Como usar este guia</div>
+    <div class="callout-d">Cada parte é independente. Se já sabem a versão, vão direto à Parte 2. Se querem a experiência Living Villages com vilas vivas, construção e Tinkers, comecem pela Parte 7. As combinações da Parte 4 juntam tudo num pacote pronto pra jogar.</div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">2</span></div>
+</div>
+
+<!-- PARTE 1: VERSÕES -->
+<div class="page">
+  <div class="ph"><div class="badge">Parte 1</div><div class="ph-title">Versões Marcantes</div></div>
+  <div class="intro">A versão define o <strong>feeling inteiro</strong> — sons, texturas, mecânicas, mobs e o ecossistema de mods. As marcadas em verde são as duas "rainhas" do modding.</div>
+  <div class="tl">
+    <div class="tli"><div class="tl-yr">2010</div><div class="tl-dot"></div><div class="tl-ver">Alpha 1.1.2</div><div class="tl-desc">Grama verde neon, 1 bioma só, terrain caótico. O vibe 2010 mais puro. Sem fome, sem End, sem pressão.</div><span class="tl-tag">NOSTALGIA PURA</span></div>
+    <div class="tli"><div class="tl-yr">2011</div><div class="tl-dot"></div><div class="tl-ver">Beta 1.7.3 — Golden Age</div><div class="tl-desc">Última versão sem barra de fome. Considerada "perfeita" pela comunidade. Minecraft puro, sem pressão de sobrevivência.</div><span class="tl-tag">R/GOLDENAGEMINECRAFT</span></div>
+    <div class="tli"><div class="tl-yr">2012</div><div class="tl-dot"></div><div class="tl-ver">1.2.5 — Selva</div><div class="tl-desc">Primeira versão estável pra mods. Tekkit Classic nasceu aqui. Jungle biome, templos, gatos.</div><span class="tl-tag">IC2 · BUILDCRAFT · REDPOWER</span></div>
+    <div class="tli"><div class="tl-yr">2012</div><div class="tl-dot"></div><div class="tl-ver">1.4.7 — FTB Nasce</div><div class="tl-desc">Wither, beacons, bigorna. Onde o Feed The Beast foi fundado. Estável, charmosa, sem os mobs novos.</div><span class="tl-tag">PRIMEIRO FTB</span></div>
+    <div class="tli"><div class="tl-yr">2013</div><div class="tl-dot"></div><div class="tl-ver">1.5.2 — Redstone Update</div><div class="tl-desc">Hoppers, comparadores. Versão de vários YouTubers BR grandes. Muito nostalgia para a geração de 2013.</div></div>
+    <div class="tli"><div class="tl-yr">2014</div><div class="tl-dot feat"></div><div class="tl-ver feat">1.7.10 — RAINHA DO MODDING ⭐</div><div class="tl-desc">O maior catálogo de mods da história. Nova geração de mundo, mais biomas. FTB, Tekkit, GTNH — tudo aqui. Sons clássicos, sem mobs novos, ecossistema imbatível.</div><span class="tl-tag">MAIOR CATALOGO DA HISTORIA</span></div>
+    <div class="tli"><div class="tl-yr">2015</div><div class="tl-dot"></div><div class="tl-ver">1.8 — PvP Update</div><div class="tl-desc">Ocean Monuments, Guardians, combate diferente. Marcante para servidores e PvP competitivo BR.</div></div>
+    <div class="tli"><div class="tl-yr">2017</div><div class="tl-dot feat"></div><div class="tl-ver feat">1.12.2 — SEGUNDA RAINHA ⭐</div><div class="tl-desc">Concrete, advancements, melhor performance. RLCraft, SkyFactory, Enigmatica nasceram aqui. O sweet spot de quem quer mods sem abrir mão de estabilidade.</div><span class="tl-tag">SEGUNDO PARAISO DOS MODS</span></div>
+    <div class="tli"><div class="tl-yr">2020</div><div class="tl-dot"></div><div class="tl-ver">1.16.5 — Nether Update</div><div class="tl-desc">Nether completamente redesenhado — Soul Sand Valley, Bastions, Piglins. Mods modernos crescem forte.</div></div>
+    <div class="tli"><div class="tl-yr">2022</div><div class="tl-dot"></div><div class="tl-ver">1.18.2 — Cavernas Reais</div><div class="tl-desc">Geração de mundo revolucionária. Cavernas gigantes, montanhas absurdas. O mundo parece diferente pela primeira vez em anos.</div></div>
+    <div class="tli"><div class="tl-yr">2023</div><div class="tl-dot"></div><div class="tl-ver">1.20.1 — Sweet Spot Atual</div><div class="tl-desc">Melhor versão atual para mods. Create, Tinkers, building tools — tudo funciona. Moderno, estável, multiplayer tranquilo.</div><span class="tl-tag">RECOMENDADO PARA MODS MODERNOS</span></div>
+  </div>
+  <div class="callout g" style="margin-top:18px">
+    <div class="callout-t">Recomendação Rápida</div>
+    <div class="callout-d"><strong>Nostalgia máxima:</strong> <span class="tg fmono">1.7.10</span> — sons antigos, sem mobs novos, maior catálogo &nbsp;·&nbsp; <strong>Custo-benefício:</strong> <span class="tg fmono">1.12.2</span> — performance + packs ativos &nbsp;·&nbsp; <strong>Moderno:</strong> <span class="tg fmono">1.20.1</span> — Create + tudo novo</div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">3</span></div>
+</div>
+
+<!-- PARTE 2: MODPACKS PÁG 1 -->
+<div class="page">
+  <div class="ph"><div class="badge b">Parte 2</div><div class="ph-title">Modpacks — Tech + Survival</div></div>
+  <div class="st">Categoria A — Tech + Progressão (estilo ForeverPlayer)</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ch"><div class="ct">Rebirth of the Night</div><div class="vb">1.12.2</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Survival imersivo inspirado em Terraria e Valheim. Progressão estruturada, noites com invasões de mobs, atmosfera tensa sem ser terror.</div>
+      <div class="chl">Mais próximo do estilo ForeverPlayer. Tinkers nativo.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Survival + Building</span></div>
+    </div>
+    <div class="card">
+      <div class="ch"><div class="ct">SevTech: Ages</div><div class="vb">1.12.2</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Progressão por eras — pedra → bronze → ferro → tech → espaço. Cada jogador avança no próprio ritmo. Tinkers incluso.</div>
+      <div class="chl">Semanas de conteúdo garantidas. Divisão de tarefas orgânica em duo.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Progressão por eras</span></div>
+    </div>
+    <div class="card r">
+      <div class="ch"><div class="ct">GregTech: New Horizons</div><div class="vb">1.7.10</div></div>
+      <div class="cm">Forge · CurseForge · Nostalgia da versão 1.7.10</div>
+      <div class="cd">O modpack mais longo que existe. Tech hardcore extrema com questbook guiando tudo. Curva brutal mas recompensador.</div>
+      <div class="chl">Projeto de meses. Duo quase obrigatório pela quantidade de conteúdo.</div>
+      <div class="cf"><span class="dl d-mo">Meses</span><span class="ft">Tech pura</span></div>
+    </div>
+    <div class="card b">
+      <div class="ch"><div class="ct">Enigmatica 2: Expert</div><div class="vb">1.12.2</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Receitas alteradas forçam usar todos os mods em conjunto. Quests guiadas — nunca perdido, mas nunca fácil.</div>
+      <div class="chl">Perfeito pra duo dividir especialidades: um faz magia, outro faz tech.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Tech guiada</span></div>
+    </div>
+  </div>
+  <div class="st b">Categoria B — Survival Desafiante</div>
+  <div class="grid2">
+    <div class="card g">
+      <div class="ch"><div class="ct">All The Mods 9 (ATM9)</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge · Kitchen sink</div>
+      <div class="cd">Tem absolutamente tudo — Create, Mekanism, Tinkers, building tools. Versão moderna, performance otimizada. Ativar hardcore mode.</div>
+      <div class="chl">Mais flexível de todos. Você controla a dificuldade.</div>
+      <div class="cf"><span class="dl d-m">Média-Alta</span><span class="ft">Tudo</span></div>
+    </div>
+    <div class="card r">
+      <div class="ch"><div class="ct">RLCraft</div><div class="vb">1.12.2</div></div>
+      <div class="cm">Forge · CurseForge · O clássico do gênero</div>
+      <div class="cd">Sede, temperatura, sistema de saúde por partes do corpo, dragões voando. Define o gênero "Minecraft mas difícil".</div>
+      <div class="chl">Em duo fica muito mais gerenciável — e muito mais divertido.</div>
+      <div class="cf"><span class="dl d-x">Extrema</span><span class="ft">Survival brutal</span></div>
+    </div>
+    <div class="card p">
+      <div class="ch"><div class="ct">Craft to Exile 2</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge · RPG estilo Path of Exile</div>
+      <div class="cd">Classes, loot randomizado, skills, dungeons com bosses. Divisão de roles real: tank + DPS, cada um com build própria.</div>
+      <div class="cf"><span class="dl d-m">Média</span><span class="ft">RPG cooperativo</span></div>
+    </div>
+    <div class="card">
+      <div class="ch"><div class="ct">Better Minecraft</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge/Fabric · CurseForge · Vanilla+</div>
+      <div class="cd">Não é brutal, mas melhora tudo — biomas, estruturas, mobs, ferramentas de building. Leve, estável, ótimo para servidor local.</div>
+      <div class="cf"><span class="dl d-m">Média</span><span class="ft">Vanilla melhorado</span></div>
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">4</span></div>
+</div>
+
+<!-- PARTE 2: MODPACKS PÁG 2 -->
+<div class="page">
+  <div class="ph"><div class="badge b">Parte 2</div><div class="ph-title">Modpacks — Building, Medieval + Expert</div></div>
+  <div class="st g">Categoria C — Building + Automação</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ch"><div class="ct">Create: Above and Beyond</div><div class="vb">1.18.2</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Todo o jogo gira em torno do Create. Fábricas mecânicas com engrenagens físicas, progressão por capítulos, visual lindíssimo.</div>
+      <div class="chl">A complexidade é o desafio. Satisfatório pra construir e automatizar em dupla.</div>
+      <div class="cf"><span class="dl d-m">Média</span><span class="ft">Automação mecânica</span></div>
+    </div>
+    <div class="card o">
+      <div class="ch"><div class="ct">Create Hardcore Hazards</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Create combinado com survival hardcore real. Você quer construir, o mundo quer te matar. A tensão do hardcore com o prazer da construção mecanizada.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Building com tensão</span></div>
+    </div>
+    <div class="card b">
+      <div class="ch"><div class="ct">FTB Presents Direwolf20</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · FTB · Pack clássico</div>
+      <div class="cd">Tech + building equilibrado. Bem balanceado para multiplayer, não overwhelmante. Ótima porta de entrada pra tech packs em duo.</div>
+      <div class="cf"><span class="dl d-m">Média</span><span class="ft">Tech balanceada</span></div>
+    </div>
+  </div>
+  <div class="st p">Categoria D — Medieval / RPG</div>
+  <div class="grid2">
+    <div class="card p">
+      <div class="ch"><div class="ct">Medieval Minecraft</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Estruturas medievais, armaduras temáticas, dungeons. Bom pra construir castelos e explorar masmorras juntos.</div>
+      <div class="cf"><span class="dl d-m">Média-Alta</span><span class="ft">Medieval + RPG</span></div>
+    </div>
+    <div class="card p">
+      <div class="ch"><div class="ct">Prominence II RPG</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge</div>
+      <div class="cd">Quests guiadas, loot system, bosses desafiantes. Cada vila tem missões — dá narrativa orgânica pra construção em duo.</div>
+      <div class="chl">Divisão de roles natural: cada um assume uma especialização.</div>
+      <div class="cf"><span class="dl d-m">Média</span><span class="ft">RPG cooperativo</span></div>
+    </div>
+  </div>
+  <div class="st">Categoria E — Expert / Endgame</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ch"><div class="ct">Nomifactory (CEu)</div><div class="vb">1.12.2</div></div>
+      <div class="cm">Forge · CurseForge · GregTech acessível</div>
+      <div class="cd">Centenas de horas, mais acessível que GTNH. Automação industrial como progressão principal. Bom pra dividir tarefas.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Tech industrial</span></div>
+    </div>
+    <div class="card g">
+      <div class="ch"><div class="ct">Vida Hardcore — ForeverPlayer</div><div class="vb">1.7.10</div></div>
+      <div class="cm">Forge · CurseForge · "Vida Hardcore Completo"</div>
+      <div class="cd">O original que você referenciou. Mapa custom, modo hardcore, progressão medieval com Tinkers. É literalmente o que você assistiu.</div>
+      <div class="chl">A referência direta. Jogar o mesmo pack é uma experiência diferente de assistir.</div>
+      <div class="cf"><span class="dl d-h">Alta</span><span class="ft">Nostalgia + Hardcore</span></div>
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">5</span></div>
+</div>
+
+<!-- PARTE 3: MAPAS -->
+<div class="page">
+  <div class="ph"><div class="badge g">Parte 3</div><div class="ph-title">Mapas e Seeds</div></div>
+  <div class="st">Ilhas Simétricas para 2 Players</div>
+  <div class="grid2">
+    <div class="mcard gn">
+      <div class="mt">Seed: Dual Islands</div>
+      <div class="mtype">Seed vanilla · Java + Bedrock · Zero setup</div>
+      <div class="seed">-5706905152808550327</div>
+      <div class="md">Duas ilhas próximas, cada uma com 1 árvore, sem mainland por ~1000 blocos. Funciona vanilla puro — só colocar a seed.</div>
+      <div class="mc">Exatamente o que você descreveu. Cada player numa ilha, recursos mínimos.</div>
+    </div>
+    <div class="mcard gn">
+      <div class="mt">Twin Islands V-3</div>
+      <div class="mtype">Mapa custom · CurseForge · Java 1.20+</div>
+      <div class="md">Mundo 5000×5000, duas ilhas médias com caves custom, saplings variados e recursos distribuídos estrategicamente.</div>
+      <div class="mc">Mais elaborado que a seed — progressão mais longa e planejada.</div>
+    </div>
+  </div>
+  <div class="st b">Skyblock e OneBlock</div>
+  <div class="grid2">
+    <div class="mcard">
+      <div class="mt">OneBlock — Tiny Takeover!</div>
+      <div class="mtype">Mapa custom · CurseForge · Java 1.21.1</div>
+      <div class="md">1 bloco no vazio. Quebre, ele regenera com itens diferentes. Progressão por fases bem definidas.</div>
+      <div class="mc">Em hardcore duo no mesmo bloco: tensão máxima desde o segundo 1.</div>
+    </div>
+    <div class="mcard">
+      <div class="mt">One Chunk — Biomes</div>
+      <div class="mtype">Mapa custom · CurseForge · 43K+ downloads</div>
+      <div class="md">Mundo limitado a 16×16 blocos com múltiplos biomas comprimidos. Todo espaço é vertical.</div>
+      <div class="mc">O mais claustrofóbico. Coordenação absoluta obrigatória.</div>
+    </div>
+  </div>
+  <div class="st g">Ilhas com Objetivos</div>
+  <div class="grid2">
+    <div class="mcard g">
+      <div class="mt">Waka Islands 1</div>
+      <div class="mtype">Mapa custom · CurseForge · Java 1.14+ · Clássico desde 2012</div>
+      <div class="md">Survival island com challenges progressivos: craft cama, obter todas as lãs, construir casa de 20 blocos, etc.</div>
+      <div class="mc">Direção clara — nunca fica sem saber o que fazer.</div>
+    </div>
+    <div class="mcard g">
+      <div class="mt">Waka Islands 2</div>
+      <div class="mtype">Mapa custom · CurseForge · Java 1.14+</div>
+      <div class="md">13 ilhas + 13 challenges progressivos. Exploração entre ilhas cria senso de aventura orgânico.</div>
+      <div class="mc">Melhor dos dois para duo — sempre tem algo específico pra fazer.</div>
+    </div>
+  </div>
+  <div class="st o">Terreno Hostil e Extremo</div>
+  <div class="grid3">
+    <div class="mcard o">
+      <div class="mt">Expanding Chunk</div>
+      <div class="mtype">Planet Minecraft · Java</div>
+      <div class="md">Começa num chunk, world border expande a cada dia in-game. Tensão de não saber o que vem.</div>
+    </div>
+    <div class="mcard r">
+      <div class="mt">UHC Midnight Challenge</div>
+      <div class="mtype">9Minecraft · Java 1.20.1</div>
+      <div class="md">Escuridão constante, mobs agressivos, recursos escassos. Não é terror — é pressão pura.</div>
+    </div>
+    <div class="mcard">
+      <div class="mt">Stranded — Oceano Infinito</div>
+      <div class="mtype">Seed específica · Java 1.16+</div>
+      <div class="md">Ilha minúscula. O oceano é simultaneamente inimigo e única fonte de recursos.</div>
+    </div>
+    <div class="mcard">
+      <div class="mt">Floating Archipelago</div>
+      <div class="mtype">Planet Minecraft · Java</div>
+      <div class="md">Ilhas flutuantes no vazio, cada uma com 1-2 recursos. Construir pontes é obrigatório.</div>
+    </div>
+    <div class="mcard o">
+      <div class="mt">Amplified + Hardcore</div>
+      <div class="mtype">World Type nativo · Java · Zero setup</div>
+      <div class="md">Montanhas até Y=256. Quedas fatais constantes. O mapa cria o desafio.</div>
+    </div>
+    <div class="mcard gn">
+      <div class="mt">Vale Rodeado — Seed</div>
+      <div class="mtype">Java 1.20.1 · Para Living Villages</div>
+      <div class="seed">3257840388504953787</div>
+      <div class="md">Vale com rio central e montanhas. Vilas nas encostas. Ideal para MineColonies.</div>
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">6</span></div>
+</div>
+
+<!-- PARTE 4 + 5: COMBINAÇÕES E DESAFIOS -->
+<div class="page">
+  <div class="ph"><div class="badge o">Parte 4</div><div class="ph-title">Combinações Prontas — Top 10</div></div>
+  <table>
+    <thead><tr><th>#</th><th>Combinação</th><th>Versão</th><th>Dificuldade</th><th>Foco</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="mono">01</td><td><strong>RotN + Seed Ilhas Simétricas</strong></td><td class="mono">1.12.2</td><td><span class="dl d-h">Alta</span></td><td>Survival + Building</td></tr>
+      <tr><td class="mono">02</td><td><strong>ATM9 Hardcore + Amplified</strong></td><td class="mono">1.20.1</td><td><span class="dl d-m">Média-Alta</span></td><td>Tudo + Terreno perigoso</td></tr>
+      <tr><td class="mono">03</td><td><strong>GTNH + Normal</strong></td><td class="mono">1.7.10</td><td><span class="dl d-mo">Extrema/Meses</span></td><td>Tech pura</td></tr>
+      <tr><td class="mono">04</td><td><strong>Create A&amp;B + OneBlock</strong></td><td class="mono">1.18.2</td><td><span class="dl d-m">Média</span></td><td>Building mecânico no vazio</td></tr>
+      <tr><td class="mono">05</td><td><strong>SevTech Ages + Normal</strong></td><td class="mono">1.12.2</td><td><span class="dl d-h">Alta</span></td><td>Progressão por eras</td></tr>
+      <tr><td class="mono">06</td><td><strong>RLCraft + Expanding Chunk</strong></td><td class="mono">1.12.2</td><td><span class="dl d-x">Extrema</span></td><td>Survival brutal</td></tr>
+      <tr><td class="mono">07</td><td><strong>Better MC + Twin Islands</strong></td><td class="mono">1.20.1</td><td><span class="dl d-m">Média</span></td><td>Vanilla+ + Ilhas</td></tr>
+      <tr><td class="mono">08</td><td><strong>Enigmatica 2 Expert + Normal</strong></td><td class="mono">1.12.2</td><td><span class="dl d-h">Alta</span></td><td>Tech guiada em duo</td></tr>
+      <tr><td class="mono">09</td><td><strong>Medieval MC + Amplified</strong></td><td class="mono">1.20.1</td><td><span class="dl d-m">Média-Alta</span></td><td>Castelos em montanhas</td></tr>
+      <tr class="hl"><td class="mono">10</td><td><strong>Vida Hardcore — ForeverPlayer</strong></td><td class="mono">1.7.10</td><td><span class="dl d-h">Alta</span></td><td>A referência original</td></tr>
+    </tbody>
+  </table>
+  <div class="ph" style="margin-top:22px"><div class="badge p">Parte 5</div><div class="ph-title">Desafios, Regras e Variantes Criativas</div></div>
+  <div class="twocol">
+    <div>
+      <div class="st p">Ideias Criativas</div>
+      <ul class="slist">
+        <li><strong>Race to the End</strong> — primeiro a matar o Dragão vence</li>
+        <li><strong>Island vs Island</strong> — seed simétrica, comparam as bases</li>
+        <li><strong>Nomad Challenge</strong> — não pode dormir 2x no mesmo lugar</li>
+        <li><strong>One Life Each</strong> — se um morre, o mundo acaba pra ambos</li>
+        <li><strong>Chunk a Day</strong> — Expanding Chunk + tech pack</li>
+        <li><strong>Medieval Kingdoms</strong> — cada um funda um reino</li>
+        <li><strong>Create Factory Race</strong> — quem automatiza X primeiro vence</li>
+        <li><strong>Amplified Nomads</strong> — sem base fixa + RotN</li>
+        <li><strong>Nostalgia Run</strong> — 1.7.10 vanilla hardcore + seed ilhas</li>
+        <li><strong>Hardcore Hermitcraft</strong> — mega-bases, visita no final</li>
+      </ul>
+    </div>
+    <div>
+      <div class="st b">Variantes de Regras</div>
+      <ul class="slist">
+        <li><strong>No Mining</strong> — só minério de mobs, trades e loot</li>
+        <li><strong>Vegetariano</strong> — só farms de plantas pra comida</li>
+        <li><strong>Pacifista</strong> — sem matar mobs (exceto bosses)</li>
+        <li><strong>Speedrun Coop</strong> — Dragão no menor tempo em duo</li>
+        <li><strong>100 Days Challenge</strong> — sobreviver 100 dias documentando</li>
+        <li><strong>Builders Paradise</strong> — ATM9 + cidade juntos</li>
+        <li><strong>Tech Race</strong> — quem chega na era final primeiro</li>
+        <li><strong>Exploration Log</strong> — mapear raio de 5000 blocos</li>
+        <li><strong>Boss Rush</strong> — matar todos os bosses em ordem</li>
+        <li><strong>Survival of the Fittest</strong> — RLCraft + Amplified, quem dura mais</li>
+      </ul>
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">7</span></div>
+</div>
+
+<!-- PARTE 6: RECOMENDAÇÃO FINAL -->
+<div class="page">
+  <div class="ph"><div class="badge">Parte 6</div><div class="ph-title">Recomendação Final — 4 Perfis de Jogo</div></div>
+  <div class="intro">Escolha o perfil que mais combina com o mood de vocês agora. Cada um está completo — versão, modpack e mapa já definidos.</div>
+  <div class="rg">
+    <div class="rb feat">
+      <span class="rl">Nostalgia + Desafio</span>
+      <div class="rtit">Rebirth of the Night + Seed das Ilhas</div>
+      <ul class="ri">
+        <li>Tinkers' Construct nativo</li>
+        <li>Noites com invasões reais (não terror)</li>
+        <li>Cada um começa numa ilha separada</li>
+        <li>Sons e texturas próximos do clássico</li>
+        <li>Seed: <span class="tb fmono">-5706905152808550327</span></li>
+      </ul>
+    </div>
+    <div class="rb">
+      <span class="rl" style="color:var(--blue)">Moderno + Flexível</span>
+      <div class="rtit">ATM9 Hardcore + Amplified</div>
+      <ul class="ri">
+        <li>Tem absolutamente tudo</li>
+        <li>Terreno Amplified cria desafio natural</li>
+        <li>Create, Tinkers, building tools nativos</li>
+        <li>Vocês controlam a dificuldade</li>
+        <li>Performance otimizada no 1.20.1</li>
+      </ul>
+    </div>
+    <div class="rb">
+      <span class="rl" style="color:var(--gold)">Nostalgia Pura</span>
+      <div class="rtit">1.7.10 Vanilla Hardcore + Ilhas</div>
+      <ul class="ri">
+        <li>Zero mods — Minecraft puro de 2014</li>
+        <li>Sons e texturas originais</li>
+        <li>Sem mobs novos, sem mecânicas novas</li>
+        <li>Desafio vem só do mapa + hardcore</li>
+        <li>Simples, direto, intensamente nostálgico</li>
+      </ul>
+    </div>
+    <div class="rb">
+      <span class="rl" style="color:var(--purple)">Projeto de Meses</span>
+      <div class="rtit">GregTech: New Horizons</div>
+      <ul class="ri">
+        <li>O modpack mais longo que existe</li>
+        <li>Nostalgia do 1.7.10 + tech extrema</li>
+        <li>Questbook guia absolutamente tudo</li>
+        <li>Dividir tarefas é obrigatório</li>
+        <li>Não começa, não para</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:16px">
+    <div class="callout-t">Se querem Living Villages + Construção + Tinkers + Hardcore</div>
+    <div class="callout-d"><strong>Entrar logo:</strong> Life in the Village 4 + CTOV + Guard Villagers + Integrated Villages. Tudo no CurseForge, 1.20.1 Forge, servidor local tranquilo.<br><strong>Máximo controle:</strong> Montagem personalizada no Prism Launcher — ver Parte 7 deste guia.</div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">8</span></div>
+</div>
+
+<!-- PARTE 7: LIVING VILLAGES PÁG 1 -->
+<div class="page">
+  <div class="ph"><div class="badge" style="background:var(--green)">Parte 7</div><div class="ph-title">Living Villages — Setup Completo</div></div>
+  <div class="intro">O mod "Living Villages" que você viu no Instagram representa um conceito: aldeões com propósito real, patrulhas, personalidade. Esta parte monta o setup completo com os mods que replicam e superam esse conceito.</div>
+  <div class="lt gn">Camada 1 — Vilas Vivas (núcleo)</div>
+  <table>
+    <thead><tr><th>Mod</th><th>O que muda</th><th>Loader</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Integrated Villages</strong></td><td>Reconstrói vilas com Create machines, puzzles, armadilhas e lore embutido. Integra 30+ mods</td><td class="mono">Forge/Fabric</td></tr>
+      <tr><td><strong>CTOV</strong> (ChoiceTheorem)</td><td>23 variantes por bioma. Cada vila encaixa no terreno e na estética local</td><td class="mono">Forge/Fabric</td></tr>
+      <tr><td><strong>Guard Villagers</strong></td><td>Guardas com IA real — patrulham, seguem você, formam grupos de defesa</td><td class="mono">Forge/Fabric</td></tr>
+      <tr><td><strong>Will's Lively Villages</strong></td><td>Nome único por aldeão e por vila por bioma. Aldeões consertam golens</td><td class="mono">Fabric</td></tr>
+      <tr><td><strong>Civilians</strong></td><td>NPCs customizáveis que andam, entram/saem de casas, falam. Popula suas construções</td><td class="mono">Fabric</td></tr>
+      <tr><td><strong>MineColonies</strong></td><td>O mais profundo — colônia do zero com NPCs com profissões reais trabalhando pra você</td><td class="mono">Forge</td></tr>
+    </tbody>
+  </table>
+  <div class="lt">Camada 2 — Construção</div>
+  <table>
+    <thead><tr><th>Mod</th><th>O que dá</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Tinkers' Construct</strong></td><td>Ferramentas customizadas — misturar materiais, forjar suas próprias ferramentas e armas</td></tr>
+      <tr><td><strong>Create</strong></td><td>Automação steampunk física — serraria, transportadores, elevadores, pontes mecânicas</td></tr>
+      <tr><td><strong>Macaw's series</strong> (6 mods)</td><td>Centenas de variações de pontes, portas, janelas, cercas, telhados e luminárias</td></tr>
+      <tr><td><strong>Supplementaries</strong></td><td>Lanternas, sinalizações, prateleiras, vasos — detalhes que tornam vilas reais</td></tr>
+      <tr><td><strong>Farmer's Delight</strong></td><td>Culinária expandida — vilas com cozinheiros de verdade fazem sentido</td></tr>
+      <tr><td><strong>Quark</strong></td><td>100+ melhorias que nunca quebram a essência do jogo</td></tr>
+    </tbody>
+  </table>
+  <div class="lt g">Camada 3 — Mecânicas que tornam o mundo vivo</div>
+  <table>
+    <thead><tr><th>Mod</th><th>O que acrescenta</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Serene Seasons</strong></td><td>4 estações reais — inverno congela rios, outono muda cores. A vila muda com o tempo</td></tr>
+      <tr><td><strong>Tough As Nails</strong></td><td>Temperatura e sede. Acampar perto de vilas passa a ter propósito real</td></tr>
+      <tr><td><strong>Alex's Mobs</strong></td><td>+80 mobs novos com IA melhorada. Fauna viva ao redor das vilas</td></tr>
+      <tr><td><strong>Twilight Forest</strong></td><td>Dimensão nova com progressão de dungeons — objetivo além de construir</td></tr>
+      <tr><td><strong>YUNG's Better series</strong></td><td>Reconstrói dungeons, fortalezas, minas, mansões. Tudo fica imersivo</td></tr>
+    </tbody>
+  </table>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">9</span></div>
+</div>
+
+<!-- PARTE 7: LIVING VILLAGES PÁG 2 -->
+<div class="page">
+  <div class="ph"><div class="badge" style="background:var(--green)">Parte 7</div><div class="ph-title">Living Villages — Modpacks e Combinações Finais</div></div>
+  <div class="st">Modpacks com Foco em Vilas Vivas</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ch"><div class="ct">Life in the Village 4</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge · O mais completo</div>
+      <div class="cd">MineColonies + Create + Tinkers + Farmer's Delight. Adicionar CTOV + Guard Villagers em cima. Compatível e estável.</div>
+      <div class="chl">Setup mais completo para o que vocês querem.</div>
+    </div>
+    <div class="card b">
+      <div class="ch"><div class="ct">Integrated (série completa)</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · Modrinth · Do criador do Integrated Villages</div>
+      <div class="cd">Vilas com Create machines, puzzles, armadilhas, lore embutido. É literalmente o "Living Villages" que você viu no Instagram.</div>
+    </div>
+    <div class="card g">
+      <div class="ch"><div class="ct">Valhelsia 6</div><div class="vb">1.20.1</div></div>
+      <div class="cm">Forge · CurseForge · Mais bonito visualmente</div>
+      <div class="cd">Create + Tinkers + Farmer's Delight + estruturas melhoradas + shaders integrados. Vilas lindas e funcionais.</div>
+    </div>
+    <div class="card p">
+      <div class="ch"><div class="ct">Arcane Colony: Tinker's Age</div><div class="vb">1.18.1</div></div>
+      <div class="cm">Forge · CurseForge · Diferenciado</div>
+      <div class="cd">Magia + Tinkers + MineColonies. Colônia em mundo mágico com progressão arcana diferenciada.</div>
+    </div>
+  </div>
+  <div class="st g">Combinações Finais — Living Villages</div>
+  <table>
+    <thead><tr><th>#</th><th>Combinação</th><th>Por que é boa</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td class="mono">33</td><td><strong>Life in the Village 4 + CTOV + Guard Villagers + Seed Vale</strong></td><td>Setup mais completo. Vilas vivas + colônia + Tinkers numa seed linda</td></tr>
+      <tr><td class="mono">34</td><td><strong>Integrated série + Amplified</strong></td><td>Vilas com Create puzzles em terreno extremo</td></tr>
+      <tr><td class="mono">35</td><td><strong>ATM9 + MineColonies + World Border 3000</strong></td><td>Tudo disponível mas território forçado a ser escasso</td></tr>
+      <tr><td class="mono">36</td><td><strong>Valhelsia 6 + Seed Penínsulas</strong></td><td>Bonito + funcional, cada um numa península</td></tr>
+      <tr><td class="mono">37</td><td><strong>Montagem Custom + Dual Islands seed</strong></td><td>Pack personalizado nas ilhas simétricas — controle total</td></tr>
+      <tr><td class="mono">38</td><td><strong>Arcane Colony + Twilight Forest</strong></td><td>Colônia mágica com dimensão extra de desafio</td></tr>
+    </tbody>
+  </table>
+  <div class="callout b">
+    <div class="callout-t">Montagem Personalizada — Prism Launcher 1.20.1 Forge</div>
+    <div class="callout-d">
+      <strong>Base:</strong> Terralith · CTOV · Integrated Villages · Repurposed Structures · YUNG's series &nbsp;|&nbsp;
+      <strong>Vilas:</strong> Guard Villagers · Will's Lively · Civilians · MineColonies · Farmer's Delight &nbsp;|&nbsp;
+      <strong>Construção:</strong> Tinkers · Create · Macaw's (6 mods) · Supplementaries · Quark &nbsp;|&nbsp;
+      <strong>Mecânicas:</strong> Serene Seasons · Alex's Mobs · Twilight Forest
+    </div>
+  </div>
+  <div class="callout" style="margin-top:12px">
+    <div class="callout-t">Recomendação Final Atualizada</div>
+    <div class="callout-d">
+      <strong>Entrar logo:</strong> Life in the Village 4 + CTOV + Guard Villagers + Integrated Villages no CurseForge.<br>
+      <strong>Máximo controle:</strong> Montagem personalizada no Prism Launcher com a lista acima.<br>
+      <strong>Sem complicação:</strong> ATM9 em hardcore. Já tem quase tudo nativo. Só jogar.
+    </div>
+  </div>
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">10</span></div>
+</div>
+
+</body>
+</html>
