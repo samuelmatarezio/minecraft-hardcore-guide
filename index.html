@@ -165,6 +165,7 @@ strong{color:var(--text)}.tg{color:var(--green)}.tb{color:var(--blue)}.to{color:
   <div class="toc-item"><span class="toc-p">PARTE 5</span><span class="toc-n">Desafios, Regras e Variantes Criativas</span><span class="toc-c">20 variantes</span></div>
   <div class="toc-item"><span class="toc-p">PARTE 6</span><span class="toc-n">Recomendação Final — 4 Perfis de Jogo</span><span class="toc-c">4 perfis</span></div>
   <div class="toc-item"><span class="toc-p">PARTE 7</span><span class="toc-n">Living Villages — Setup Completo</span><span class="toc-c">mods + packs + combos</span></div>
+  <div class="toc-item"><span class="toc-p">PARTE 8</span><span class="toc-n">Tinkers' Construct — O Core Mod</span><span class="toc-c">integrations + combos + mapa</span></div>
   <div class="callout" style="margin-top:28px">
     <div class="callout-t">Como usar este guia</div>
     <div class="callout-d">Cada parte é independente. Se já sabem a versão, vão direto à Parte 2. Se querem a experiência Living Villages com vilas vivas, construção e Tinkers, comecem pela Parte 7. As combinações da Parte 4 juntam tudo num pacote pronto pra jogar.</div>
@@ -618,6 +619,208 @@ strong{color:var(--text)}.tg{color:var(--green)}.tb{color:var(--blue)}.to{color:
     </div>
   </div>
   <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">10</span></div>
+</div>
+
+<!-- PARTE 8: TINKERS' CONSTRUCT PÁG 1 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-p">PARTE 8</span>
+    <span class="ph-t">Tinkers' Construct — O Core Mod</span>
+    <span class="ph-s">forge suas armas, domine o hardcore</span>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+    <div class="card" style="border-color:var(--gold)">
+      <div class="card-t" style="color:var(--gold)">Por que Tinkers?</div>
+      <p style="font-size:13px;line-height:1.7;color:var(--muted)">
+        O ForeverPlayer usou Tinkers' Construct na <strong style="color:var(--fg)">Saga Vida Hardcore</strong> justamente pelo que ele entrega no hardcore: ferramentas com <strong style="color:var(--green)">durabilidade real</strong>, materiais que importam, e progressão que faz sentido. Cada bioma vira uma fonte de recursos estratégicos — você caça obsidiana por uma razão, você vai ao Nether por uma razão.
+      </p>
+    </div>
+    <div class="card" style="border-color:var(--green)">
+      <div class="card-t" style="color:var(--green)">Versão Recomendada</div>
+      <div style="margin-top:8px">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;color:var(--muted)">Mod</span>
+          <span style="font-size:13px;font-weight:600">Tinkers' Construct 3.9.0.6</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;color:var(--muted)">Minecraft</span>
+          <span style="font-size:13px;font-weight:600">1.20.1</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--border)">
+          <span style="font-size:13px;color:var(--muted)">Loader</span>
+          <span style="font-size:13px;font-weight:600">Forge / NeoForge</span>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:6px 0">
+          <span style="font-size:13px;color:var(--muted)">Bridge</span>
+          <span class="badge" style="background:#1a2a1a;color:var(--green);font-size:11px">Tinkers Integrations + Tweaks</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-t">Tinkers Integrations &amp; Tweaks — Compatibilidade Total</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Este mod-ponte conecta Tinkers com todo o ecossistema moderno. Sem ele, cada mod fica numa bolha.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:4px">CREATE</div>
+        <div style="font-size:11px;color:var(--muted)">Fundição automática, processamento em escala</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:4px">ALEX'S MOBS</div>
+        <div style="font-size:11px;color:var(--muted)">Novos materiais e drops exclusivos</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:var(--gold);margin-bottom:4px">TWILIGHT FOREST</div>
+        <div style="font-size:11px;color:var(--muted)">Materiais de boss como Fiery Metal</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:#c084fc;margin-bottom:4px">ARS NOUVEAU</div>
+        <div style="font-size:11px;color:var(--muted)">Ferramentas com magia integrada</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:#f472b6;margin-bottom:4px">BOTANIA</div>
+        <div style="font-size:11px;color:var(--muted)">Materiais florais únicos</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:#22d3ee;margin-bottom:4px">AQUACULTURE 2</div>
+        <div style="font-size:11px;color:var(--muted)">Varas de pescar Tinkers</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:#fb923c;margin-bottom:4px">ICE AND FIRE</div>
+        <div style="font-size:11px;color:var(--muted)">Escamas e ossos de dragão</div>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;text-align:center">
+        <div style="font-size:11px;font-weight:700;color:#a78bfa;margin-bottom:4px">MEKANISM</div>
+        <div style="font-size:11px;color:var(--muted)">Alloys avançados para ferramentas</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--gold)">
+    <div class="card-t" style="color:var(--gold)">3 Caminhos para Jogar com Tinkers</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:12px">
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:var(--muted);margin-bottom:6px">CAMINHO A</div>
+        <div style="font-size:13px;font-weight:700;margin-bottom:6px">Vida Hardcore Original</div>
+        <div class="badge" style="margin-bottom:8px;font-size:10px">1.7.10 — Nostalgia Pura</div>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">Exatamente o que ForeverPlayer jogou. Pack FTB Unleashed ou Agrarian Skies. Tinkers clássico, sem Living Villages (não existe em 1.7).</p>
+      </div>
+      <div style="background:var(--bg);border:2px solid var(--green);border-radius:8px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:6px">CAMINHO B ⭐</div>
+        <div style="font-size:13px;font-weight:700;margin-bottom:6px">Life in the Village 4</div>
+        <div class="badge" style="background:#1a2a1a;color:var(--green);margin-bottom:8px;font-size:10px">1.20.1 — Recomendado</div>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">Pack completo com MineColonies, Create, Tinkers incluso. Adicionar Tinkers Integrations + Tweaks para maximizar compatibilidade.</p>
+      </div>
+      <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:12px">
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:6px">CAMINHO C</div>
+        <div style="font-size:13px;font-weight:700;margin-bottom:6px">Montagem Custom</div>
+        <div class="badge" style="font-size:10px">1.20.1 — DIY</div>
+        <p style="font-size:11px;color:var(--muted);line-height:1.6">Base Tinkers + Create + Alex's Mobs + Ice and Fire + Living Villages stack. Mais trabalho, controle total.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">11</span></div>
+</div>
+
+<!-- PARTE 8: TINKERS' CONSTRUCT PÁG 2 -->
+<div class="page">
+  <div class="ph">
+    <span class="ph-p">PARTE 8</span>
+    <span class="ph-t">Tinkers' Construct — Setup Final</span>
+    <span class="ph-s">combo definitivo + mapas compatíveis</span>
+  </div>
+
+  <div class="callout" style="margin-bottom:20px;border-color:var(--gold)">
+    <div class="callout-t" style="color:var(--gold)">Combo Definitivo Recomendado</div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px">
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">⚙️</span>
+        <div><div style="font-size:12px;font-weight:700">Life in the Village 4</div><div style="font-size:11px;color:var(--muted)">Base do modpack (CurseForge)</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">🔧</span>
+        <div><div style="font-size:12px;font-weight:700">Tinkers Integrations + Tweaks</div><div style="font-size:11px;color:var(--muted)">Ponte de compatibilidade</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">🏘️</span>
+        <div><div style="font-size:12px;font-weight:700">CTOV + Guard Villagers</div><div style="font-size:11px;color:var(--muted)">Vilas vivas com defesa real</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">🐉</span>
+        <div><div style="font-size:12px;font-weight:700">Twilight Forest</div><div style="font-size:11px;color:var(--muted)">Materiais de boss para Tinkers</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">🦎</span>
+        <div><div style="font-size:12px;font-weight:700">Alex's Mobs</div><div style="font-size:11px;color:var(--muted)">Drops únicos para ferramentas</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;padding:8px;background:var(--bg);border-radius:6px">
+        <span style="font-size:16px">🗺️</span>
+        <div><div style="font-size:12px;font-weight:700">Dual Survival Islands</div><div style="font-size:11px;color:var(--muted)">Seed: 3257840388504953787</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:20px">
+    <div class="card-t">Mapas Ideais para Tinkers' Construct</div>
+    <p style="font-size:12px;color:var(--muted);margin-bottom:12px">Com Tinkers, a <strong style="color:var(--fg)">escassez de materiais</strong> vira mecânica. Escolha mapas que forçam exploração e fazem cada mineral valer.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      <div style="padding:12px;background:var(--bg);border-radius:8px;border-left:3px solid var(--green)">
+        <div style="font-size:12px;font-weight:700;margin-bottom:4px">Dual Survival Islands</div>
+        <div class="seed" style="font-size:10px;margin-bottom:6px">3257840388504953787</div>
+        <p style="font-size:11px;color:var(--muted)">Ilhas simétricas — cada jogador começa com recursos diferentes. Obriga trocas e planejamento conjunto de materiais para Tinkers.</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border-radius:8px;border-left:3px solid var(--gold)">
+        <div style="font-size:12px;font-weight:700;margin-bottom:4px">SkyBlock Modded</div>
+        <div class="badge" style="font-size:10px;margin-bottom:6px">Scarcity máxima</div>
+        <p style="font-size:11px;color:var(--muted)">No SkyBlock, cada material é precioso. Tinkers fica mais impactante quando ferro e cobre têm peso real.</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border-radius:8px;border-left:3px solid var(--blue)">
+        <div style="font-size:12px;font-weight:700;margin-bottom:4px">RLCraft Custom Map</div>
+        <div class="badge" style="font-size:10px;margin-bottom:6px">Alta dificuldade</div>
+        <p style="font-size:11px;color:var(--muted)">Terrain hostil onde Tinkers é a diferença entre sobreviver e morrer nas primeiras noites.</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border-radius:8px;border-left:3px solid #c084fc">
+        <div style="font-size:12px;font-weight:700;margin-bottom:4px">Seed Vanilla Rica</div>
+        <div class="seed" style="font-size:10px;margin-bottom:6px">-4379469131957062683</div>
+        <p style="font-size:11px;color:var(--muted)">Spawn com múltiplos biomas próximos — acesso rápido a materiais variados para experimentar Tinkers cedo.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="border-color:var(--green)">
+    <div class="card-t" style="color:var(--green)">Progressão Tinkers no Hardcore Duo</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px">
+      <div style="text-align:center;padding:10px;background:var(--bg);border-radius:8px">
+        <div style="font-size:20px;margin-bottom:6px">🪨</div>
+        <div style="font-size:11px;font-weight:700;color:var(--green);margin-bottom:4px">Fase 1</div>
+        <div style="font-size:11px;font-weight:600;margin-bottom:4px">Sobrevivência</div>
+        <div style="font-size:10px;color:var(--muted)">Smeltery de pedra, ferramentas de flint e madeira</div>
+      </div>
+      <div style="text-align:center;padding:10px;background:var(--bg);border-radius:8px">
+        <div style="font-size:20px;margin-bottom:6px">⚙️</div>
+        <div style="font-size:11px;font-weight:700;color:var(--blue);margin-bottom:4px">Fase 2</div>
+        <div style="font-size:11px;font-weight:600;margin-bottom:4px">Metal</div>
+        <div style="font-size:10px;color:var(--muted)">Smeltery de bronze, ferramentas de cobre + estanho</div>
+      </div>
+      <div style="text-align:center;padding:10px;background:var(--bg);border-radius:8px">
+        <div style="font-size:20px;margin-bottom:6px">🔥</div>
+        <div style="font-size:11px;font-weight:700;color:var(--gold);margin-bottom:4px">Fase 3</div>
+        <div style="font-size:11px;font-weight:600;margin-bottom:4px">Nether</div>
+        <div style="font-size:10px;color:var(--muted)">Ferramentas de Ardite + Cobalt, modificadores Lava</div>
+      </div>
+      <div style="text-align:center;padding:10px;background:var(--bg);border-radius:8px">
+        <div style="font-size:20px;margin-bottom:6px">💎</div>
+        <div style="font-size:11px;font-weight:700;color:#c084fc;margin-bottom:4px">Fase 4</div>
+        <div style="font-size:11px;font-weight:600;margin-bottom:4px">End Game</div>
+        <div style="font-size:10px;color:var(--muted)">Manyullyn + materiais de boss do Twilight Forest</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pf"><span class="pf-t">Minecraft Hardcore Duo Guide · Samuel + Caleb</span><span class="pf-n">12</span></div>
 </div>
 
 </body>
